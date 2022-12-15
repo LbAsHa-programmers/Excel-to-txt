@@ -128,13 +128,13 @@ if (isset($_POST['save_excel_data'])) {
                 Code_interne,Code_guichet,Devise,
                 Indice_d_exaunération,RIB,CIB,
                 Date_opération,Date_de_valeur,
-                Libellé,Référence,Montant,SENS)
+                Libellé,Référence,Montant,SENS,MONTT,DC)
                  VALUES ('$Code_enregistrement','$Code_banque',
                  '$Code_interne','$Code_guichet','$Devise',
                  '$Indice_d_exaunération','$RIB','$CIB',
                  '$Date_opération','$Date_de_valeur',
                  '$Libellé','$Référence','$Montant3',
-                 '$W')";
+                 '$W','$montotal','$SENS')";
             $result = mysqli_query($conn, $Query) or die("bad query");
             $sql = "UPDATE `excel` SET `SENS`= '' WHERE `Code_enregistrement` LIKE '%7'";
             $query_run = mysqli_query($conn, $sql) or die("bad query");

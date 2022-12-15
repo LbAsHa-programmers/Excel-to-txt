@@ -150,6 +150,10 @@
     button {
         text-align: center;
     }
+
+    .alert-success {
+        margin-top: 4vh;
+    }
 </style>
 
 <body>
@@ -202,8 +206,16 @@
                                     <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z" />
                                 </svg> Export</button>
                         </div>
-                    </form>
 
+                    </form>
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Rules of Using : </h4>
+                        <p>LA FORMAT DE FICHIER EXCEL OBLIGÉ .CSV
+
+                        </p>
+                        <hr>
+                        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                    </div>
 
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
