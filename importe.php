@@ -1,8 +1,8 @@
 <?php
-// session_start();
-// include('dbconfig.php');
+session_start();
+include('dbconfig.php');
 
-require '../vendor/autoload.php';
+require './vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -35,13 +35,13 @@ if(isset($_POST['save_excel_data']))
                 $Indice_d_exaunération = $row['5'];
                 $RIB = $row['6'];
                 $CIB = $row['7'];
-                $Date_opération = $row['8'];
-                $Date_de_valeur = $row['9'];
+                $Date_opération = date('%d/%m/%y',strtotime($row['8']));
+                $Date_de_valeur = date('%d/%m/%y',strtotime($row['9']));
                 $Libellé = $row['10'];
                 $Référence = $row['11'];
                 $Montant = $row['12'];
 
-                $studentQuery = "INSERT INTO students (fullname,email,phone,course) VALUES ('$Code_enregistrement','$Code_banque','$Code_interne','$Code_guichet','$Devise','$Indice_d_exaunération','$RIB','$CIB','$Date_opération','$Date_de_valeur','$Libellé','$Référence','$Montant')";
+                $studentQuery = "INSERT INTO EXCEL (Code_enregistrement,Code_banque,Code_interne,Code_guichet,Devise,Indice_d_exaunération,RIB,CIB,Date_opération,Date_de_valeur,Libellé,Référence,Montant) VALUES ('$Code_enregistrement','$Code_banque','$Code_interne','$Code_guichet','$Devise','$Indice_d_exaunération','$RIB','$CIB','$Date_opération','$Date_de_valeur','$Libellé','$Référence','$Montant')";
                 $result = mysqli_query($conn, $studentQuery);
                 $msg = true;
             }
