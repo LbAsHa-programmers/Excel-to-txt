@@ -4,7 +4,9 @@ include('dbconfig.php');
 
 require './vendor/autoload.php';
 
+use PhpOffice\PhpSpreadsheet\Calculation\MathTrig\Sum;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Worksheet\Row;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
 use PhpOffice\PhpSpreadsheet\Writer\Csv;
@@ -23,6 +25,7 @@ if (isset($_POST['save_excel_data'])) {
       $count = "0";
       foreach ($data as $row) {
          if ($count > 0) {
+            $SUM = array_sum($row);
             $Code_enregistrement = $row['0'];
             $Code_banque = $row['1'];
             $Code_interne = $row['2'];
