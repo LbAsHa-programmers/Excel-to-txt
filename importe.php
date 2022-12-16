@@ -156,7 +156,7 @@ if (isset($_POST['save_excel_data'])) {
          exit(0);
       }
    } else {
-      $_SESSION['message'] = "Invalid File";
+      $_SESSION['message'] = "No File selected";
       header('Location: index.php');
       exit(0);
    }

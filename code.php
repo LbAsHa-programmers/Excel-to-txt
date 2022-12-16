@@ -29,7 +29,7 @@ if (isset($_POST['export_excel_btn'])) {
             exit;
         }
     } else {
-        $_SESSION['message'] = "Invalid File";
+        $_SESSION['message'] = "No Data Imported";
         header('Location: index.php');
         exit;
     }
