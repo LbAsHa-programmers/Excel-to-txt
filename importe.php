@@ -152,15 +152,15 @@ if (isset($_POST['save_excel_data'])) {
       if (isset($msg)) {
          $_SESSION['message'] = "Successfully Imported";
          header('Location: index.php');
-         exit(0);
+         exit;
       } else {
          $_SESSION['message'] = "Not Imported";
          header('Location: index.php');
-         exit(0);
+         exit;
       }
    } else {
       $_SESSION['message'] = "No File selected";
       header('Location: index.php');
-      exit(0);
+      exit;
    }
 }
