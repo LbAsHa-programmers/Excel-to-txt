@@ -38,7 +38,7 @@ if (isset($_POST['save_excel_data'])) {
             $Date_de_valeur = $row['9'];
             $Libellé = $row['10'];
             $Référence = $row['11'];
-            $montotal = $row['12'];
+            $montotal = str_replace(',', '.', $row['12']);
             $Montant = str_replace(',', '', $row['12']);
             $Montant2 = str_pad($Montant, 14, "0", STR_PAD_LEFT);
             $SENS = $row['13'];
@@ -141,6 +141,7 @@ if (isset($_POST['save_excel_data'])) {
             $result = mysqli_query($conn, $Query) or die("bad query");
             $sql = "UPDATE `excel` SET `SENS`= '' WHERE `Code_enregistrement` LIKE '%7'";
             $query_run = mysqli_query($conn, $sql) or die("bad query");
+
 
 
             $msg = true;
