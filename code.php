@@ -46,7 +46,7 @@ if (isset($_POST['export_excel_btn'])) {
                 }
             }
         } else {
-            $_SESSION['message'] = " Invalid Amount'($MT)' ";
+            $_SESSION['message'] = " Invalid Amount'($MT)' Upload The Correct file ";
             header('Location: index.php');
             $sql6 = "TRUNCATE TABLE `EXCEL`";
             $query_run6 = mysqli_query($con, $sql) or die("bad query");
