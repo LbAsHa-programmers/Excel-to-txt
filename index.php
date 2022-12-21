@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Import Excel Data into database in PHP</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Moulinette de relevé AFB120</title>
+    <link rel="website icon" type="png" href="vendor/css/CSV.png">
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/vendor/css/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -71,7 +72,7 @@
                             <spen style="color: red;">obligate</spen>
                         </p>
                         <p>The Date Format <spen style="color: red;">[ aaaa-mm-jj ]</spen> Ex : [2000-08-26]</p>
-                        <img src="/vendor/css/ex.png" alt="">
+                        <img src="/vendor/css/exp.png" alt="">
                         <hr>
                         <p class="mb-0">For a good result, follow the rules .</p>
 
