@@ -72,7 +72,7 @@
                             <spen style="color: red;">obligate</spen>
                         </p>
                         <p>The Date Format <spen style="color: red;">[ aaaa-mm-jj ]</spen> Ex : [2000-08-26]</p>
-                        <img src="/vendor/css/exp.png" alt="">
+                        <img src="/vendor/css/source excel.png" alt="">
                         <hr>
                         <p class="mb-0">For a good result, follow the rules .</p>
 
