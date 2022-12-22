@@ -88,7 +88,7 @@
     <footer>
         <div class="footer-bottom">
             <p>
-                copyright &copy;2022 . created by <span><a href="Abdessamia63@gmail.com">Rguibi</a></span>
+                copyright &copy;2022
             </p>
         </div>
     </footer>
