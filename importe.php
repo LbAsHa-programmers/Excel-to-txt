@@ -34,8 +34,8 @@ if (isset($_POST['save_excel_data'])) {
             $Indice_d_exaunération = $row['5'];
             $RIB = $row['6'];
             $CIB = $row['7'];
-            $Date_opération = $row['8'];
-            $Date_de_valeur = $row['9'];
+            $Date_opération = date("Y-m-d", strtotime($row['8']));
+            $Date_de_valeur = date("Y-m-d", strtotime($row['9']));
             $Libellé = $row['10'];
             $Référence = $row['11'];
             $montotal = str_replace(',', '.', $row['12']);

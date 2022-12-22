@@ -1,10 +1,10 @@
 <?php
 session_start();
-$con = mysqli_connect('localhost', 'root', '', 'school');
+include('dbconfig.php');
 
 if (isset($_POST['delete_data_btn'])) {
     $sql = "TRUNCATE TABLE excel";
-    $query_run = mysqli_query($con, $sql) or die("bad query");
+    $query_run = mysqli_query($conn, $sql) or die("bad query");
     $msg = true;
 }
 if (isset($msg)) {
