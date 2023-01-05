@@ -48,7 +48,8 @@ if (isset($_POST['export_excel_btn'])) {
 
                     $name = date("YmdHi");
                     // $f = $name . "" . '.txt';
-                    $prt = fopen("C:\Users\Lenovo Thinkpad X280\Downloads\data$name.txt", "a+");
+                    $path = dirname(__FILE__, 3);
+                    $prt = fopen("$path\Desktop\data$name.txt", "a+");
                     fwrite($prt, $ff);
                     fclose($prt);
                     $_SESSION['message'] = "Upload successfully";
