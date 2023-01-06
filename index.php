@@ -92,13 +92,7 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-bottom">
-            <p>
-                copyright &copy;2022
-            </p>
-        </div>
-    </footer>
+
 </body>
 
 </html>
