@@ -38,16 +38,7 @@ if (isset($_POST['export_excel_btn'])) {
                 while ($row1 = $query_run->fetch_assoc()) {
 
                     $ff = str_pad($row1['substring(Code_enregistrement,2,2)'], 2, "0", STR_PAD_RIGHT) . "" . str_pad($row1['substring(Code_banque,1,5)'], 5, "0", STR_PAD_LEFT) . "" . str_replace('0000', '    ', str_pad($row1['substring(Code_interne,1,4)'], 4, "0", STR_PAD_LEFT)) . "" . str_replace('00000', '     ', str_pad($row1['substring(Code_guichet,1,5)'], 5, "0", STR_PAD_LEFT)) . "" . str_pad($row1['substring(Devise,1,3)'], 3, " ", STR_PAD_RIGHT) . "" . str_pad($row1['substring(Indice_d_exaunération,1,1)'], 1, " ", STR_PAD_RIGHT) . " " . str_pad($row1['substring(RIB,1,11)'], 11, " ", STR_PAD_RIGHT) . "" . str_pad($row1['substring(CIB,1,2)'], 2, " ", STR_PAD_RIGHT) . "" . str_pad($row1['Date_operation'], 6, " ", STR_PAD_RIGHT) . "  " . str_replace('010170', '      ', str_pad($row1['Date_devaleur'], 6, " ", STR_PAD_RIGHT)) . "" . str_pad($row1['substring(Libellé,1,31)'], 31, " ", STR_PAD_RIGHT) . "" . str_pad($row1['substring(Référence,1,11)'], 11, " ", STR_PAD_RIGHT) . "" . $row1['substring(Montant,1,30)'] . "000402016" . str_pad($row1['SENS'], 7, " ", STR_PAD_RIGHT) . "\n";
-
-
-
-                    // header("Content-Type: text/plain; charset=utf-8");
-                    // header('Content-Disposition: attachement; filename="data.txt"');
-
-                    // echo ($ff);
-
                     $name = date("YmdHi");
-                    // $f = $name . "" . '.txt';
                     $path = dirname(__FILE__, 3);
                     $prt = fopen("$path\Desktop\data$name.txt", "a+");
                     fwrite($prt, $ff);
@@ -55,8 +46,6 @@ if (isset($_POST['export_excel_btn'])) {
                     $_SESSION['message'] = "Upload successfully";
                     header('Location: index.php');
                 }
-
-                // file_put_contents($prt, $ff);
             }
         } else {
             $_SESSION['message'] = " Invalid Amount'($MT)' Upload The Correct file ";
