@@ -39,11 +39,11 @@
                         }
                         ?>
 
-                    <!-- <div class="card"> -->
+
                     <div class="card-header">
                         <h4> Import Excel file </h4>
                     </div>
-                    <!-- <div class="card-body"> -->
+
 
                     <form action="importe.php" method="POST" enctype="multipart/form-data">
 
