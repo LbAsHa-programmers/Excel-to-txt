@@ -2,46 +2,32 @@
 session_start();
 include('dbconfig.php');
 
-require './vendor/autoload.php';
-
-use PhpOffice\PhpSpreadsheet\Calculation\MathTrig\Sum;
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Worksheet\Row;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use PhpOffice\PhpSpreadsheet\Writer\Xls;
-use PhpOffice\PhpSpreadsheet\Writer\Csv;
 
 if (isset($_POST['save_excel_data'])) {
-   $fileName = $_FILES['import_file']['name'];
-   $file_ext = pathinfo($fileName, PATHINFO_EXTENSION);
+   $fileName = $_FILES['import_file']['tmp_name'];
 
-   $allowed_ext = ['xls', 'csv', 'xlsx'];
-
-   if (in_array($file_ext, $allowed_ext)) {
-      $inputFileNamePath = $_FILES['import_file']['tmp_name'];
-      $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($inputFileNamePath);
-      $data = $spreadsheet->getActiveSheet()->toArray();
-
-      $count = "0";
-      foreach ($data as $row) {
+   if ($_FILES["import_file"]["size"] > 0) {
+      $file = fopen($fileName, "r");
+      $count = 0;
+      while (($row = fgetcsv($file, 10000, ";")) !== FALSE) {
+         $count++;
          if ($count > 0) {
-            $SUM = array_sum($row);
-            $Code_enregistrement = $row['0'];
-            $Code_banque = $row['1'];
-            $Code_interne = $row['2'];
-            $Code_guichet = $row['3'];
-            $Devise = $row['4'];
-            $Indice_d_exaunération = $row['5'];
-            $RIB = $row['6'];
-            $CIB = $row['7'];
-            $Date_opération = $row['8'];
-            $Date_de_valeur = $row['9'];
-            $Libellé = $row['10'];
-            $Référence = $row['11'];
-            $montotal = str_replace(',', '.', $row['12']);
-            $Montant = str_replace(',', '', $row['12']);
+            $Code_enregistrement = $row[0];
+            $Code_banque = $row[1];
+            $Code_interne = $row[2];
+            $Code_guichet = $row[3];
+            $Devise = $row[4];
+            $Indice_d_exaunération = $row[5];
+            $RIB = $row[6];
+            $CIB = $row[7];
+            $Date_opération = $row[8];
+            $Date_de_valeur = $row[9];
+            $Libellé = $row[10];
+            $Référence = $row[11];
+            $montotal = str_replace(',', '.', $row[12]);
+            $Montant = str_replace(',', '', $row[12]);
             $Montant2 = str_pad($Montant, 14, "0", STR_PAD_LEFT);
-            $SENS = $row['13'];
+            $SENS = $row[13];
 
 
             if (str_ends_with($Montant2, '0')) {
